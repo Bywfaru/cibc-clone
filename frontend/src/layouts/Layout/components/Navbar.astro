@@ -1,0 +1,40 @@
+<nav class:list={['w-full', 'bg-background-primary']}>
+  <div
+      class:list={['w-full', 'max-w-screen-lg', 'flex', 'gap-5', 'mx-auto', 'items-center', 'py-[19px]', 'justify-between']}>
+    <img src="/images/logo.png" alt="CIBC Logo" class:list={['h-[37px]', 'w-auto',]}/>
+
+    <div class:list={['flex', 'gap-5', 'text-[12px]', 'leading-[18px]']}>
+      <div class:list={['flex', 'flex-col', 'items-end']}>
+        <span>Your CIBC Advisor:</span>
+        <span><strong>TAK WA LEE</strong></span>
+        <span>604-665-6106 Ext. 334</span>
+      </div>
+
+      <div
+          class:list={['flex', '[&>*:not(:last-child)]:pr-5', '[&>*:not(:last-child)]:border-r', '[&>*:not(:last-child)]:border-[#BBBCBC]', '[&>*:not(:first-child)]:pl-5', '[&>*]:h-fit', 'items-center', '[&_a]:underline-offset-2', '[&_a]:flex', '[&_a]:gap-[5px]', '[&_a]:items-center']}>
+        <div>
+          <a href="/search" class:list={['hover:underline', 'hover:text-primary']}>
+            <img src="/images/search.png" alt="Search icon" class={['h-[29px]', 'w-auto']}/>
+
+            <span>Search</span></a>
+        </div>
+
+        <div class:list={['flex', 'flex-col']}>
+          <a href="/meet-with-us" class:list={['hover:underline', 'hover:text-primary']}>
+            <img src="/images/appointment.png" alt="Appointment icon" class={['h-[29px]', 'w-auto']}/>
+
+            <span>Meet with us</span></a>
+          <a href="/goal-planner" class:list={['hover:underline', 'hover:text-primary']}>
+            <img src="/images/target.png" alt="Target icon" class={['h-[29px]', 'w-auto']}/>
+
+            <span>CIBC GoalPlanner</span></a>
+        </div>
+
+        <div>
+          <img src="/images/notification.png" alt="Notification icon"
+               class:list={['w-[28px]', '[clip:rect(0,28px,25px,0)]']}/>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
