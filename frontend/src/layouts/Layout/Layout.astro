@@ -1,27 +1,41 @@
 ---
-import SignOffBar from "./components/SignOffBar.astro";
-import Navbar from "./components/Navbar.astro";
+import SignOffBar from './components/SignOffBar.astro';
+import Navbar, { NavbarProps } from './components/Navbar.astro';
+
+export type LayoutProps = {
+  title?: string;
+  advisor?: NavbarProps['advisor'];
+};
+type Props = LayoutProps;
+
+const BASE_TITLE = 'CIBC Online Banking';
+
+const { advisor, title } = Astro.props;
+const renderedTitle = title ? `${title} | ${BASE_TITLE}` : BASE_TITLE;
 ---
+
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width"/>
-  <link rel="icon" type="image/svg+xml" href="/favicon.png"/>
-  <meta name="generator" content={Astro.generator}/>
-  <title>Deposit Account Details | CIBC Online Banking</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.png" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{renderedTitle}</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
-        rel="stylesheet">
-</head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-<body>
-<SignOffBar/>
-<Navbar/>
-<slot/>
-</body>
+  <body>
+    <SignOffBar />
+    <Navbar advisor={advisor} />
+    <slot />
+  </body>
 </html>
 
 <style>

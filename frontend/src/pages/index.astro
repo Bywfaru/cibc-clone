@@ -1,6 +1,12 @@
 ---
+import type { LayoutProps } from '../layouts/Layout/Layout.astro';
 import Layout from '../layouts/Layout/Layout.astro';
+
+const ADVISOR: LayoutProps['advisor'] = {
+  name: 'TAK WA LEE',
+  phone: '604-665-6106',
+  ext: '334',
+};
 ---
 
-<Layout>
-</Layout>
+<Layout advisor={ADVISOR} />
